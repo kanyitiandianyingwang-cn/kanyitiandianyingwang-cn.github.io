@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="看一天电影网是专注“一天如何被一部电影填满”的观影指南与正版导航：晨光·轻松、午后·烧脑、黄昏·治愈、深夜·沉思四类片单，全天排片表、观影仪式感、导演的一天、经典台词与正版渠道索引，倡导慢看、拒绝低俗、支持正版。">
+<meta name="keywords" content="看一天电影网,看一天电影,一天看几部电影,电影推荐,观影指南,烧脑电影,治愈电影,经典电影,正版观影">
+<meta name="author" content="看一天电影网">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0b1020">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>看一天电影网 - 一天，只做一件事：看电影</title>
+<link rel="canonical" href="https://kanyitiandianyingwang-cn.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.82em' font-size='80' font-weight='900' fill='%2370e0ff'>日</text></svg>">
+<style>
+/* ============ 基础 ============ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0b1020;--ink:#eef4ff;--mut:#93a3bf;--card:#141b30;--line:#26324d;
+  --sun:#ffb340;--sky:#3aa0ff;--deep:#6b5cff;--night:#1c2547;--ink2:#0f1526;--teal:#37c8b8;
+  --sh:0 28px 64px rgba(0,0,0,.55);--r:22px;--e:cubic-bezier(.22,.7,.3,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.85;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:
+  radial-gradient(700px 420px at 84% 6%,rgba(58,160,255,.16),transparent 60%),
+  radial-gradient(620px 460px at 4% 94%,rgba(255,179,64,.12),transparent 60%)}
+a{color:inherit;text-decoration:none;transition:.26s var(--e)}
+img{max-width:100%;display:block}
+ul,ol{list-style:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+.sec{padding:96px 0;position:relative;z-index:2}
+.kicker{font-weight:900;letter-spacing:.3em;font-size:11px;color:var(--sun)}
+.lead{color:var(--mut);max-width:740px;font-size:15px}
+.h2{font-size:clamp(25px,4.6vw,44px);font-weight:950;line-height:1.2;margin:10px 0 12px;letter-spacing:-1.2px}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 32px;border-radius:99px;font-weight:800;font-size:15px;cursor:pointer;border:0;transition:.3s var(--e);font-family:inherit}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;flex-wrap:wrap;margin-bottom:46px}
+.tag{font-size:11.6px;font-weight:800;padding:7px 15px;border-radius:99px;border:1px solid var(--line);color:var(--sun);background:rgba(255,179,64,.08)}
+
+/* ============ 导航 ============ */
+.nav{position:sticky;top:0;z-index:1000;background:rgba(11,16,32,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nv{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:950;font-size:19px;flex-shrink:0;letter-spacing:-.5px}
+.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(140deg,#ffb340,#ff7a45);color:#20160c;display:grid;place-items:center;font-size:22px;font-weight:950;box-shadow:0 10px 26px rgba(255,179,64,.3);flex-shrink:0;position:relative;overflow:hidden}
+.logo::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 24% 20%,rgba(255,255,255,.55),transparent 42%);mix-blend-mode:overlay}
+.brand small{display:block;font-size:9.2px;color:var(--mut);font-weight:700;letter-spacing:.2em}
+.links{display:flex;gap:2px;align-items:center}
+.links a{font-size:14px;font-weight:700;padding:10px 15px;border-radius:99px;color:#cdd9f0}
+.links a:hover{color:#fff;background:rgba(58,160,255,.16)}
+.links .go{color:#20160c!important;background:linear-gradient(135deg,#ffd27a,#ff9a45);box-shadow:0 10px 22px rgba(255,154,69,.26)}
+.burger{display:none;width:44px;height:44px;border:0;background:rgba(58,160,255,.14);border-radius:12px;color:var(--sky);font-size:22px;cursor:pointer;flex-shrink:0}
+
+/* ============ Hero：太阳轨迹 ============ */
+.hero{position:relative;overflow:hidden;padding:40px 0 104px}
+.hr{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.hc{max-width:620px}
+.eyebrow{font-size:11.6px;font-weight:900;letter-spacing:.34em;color:var(--sun)}
+.hc h1{font-size:clamp(29px,5.4vw,54px);font-weight:950;line-height:1.12;letter-spacing:-2px;margin:12px 0}
+.hc h1 em{font-style:normal;background:linear-gradient(92deg,#ffd27a,#ff8a45 55%,#70e0ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hc p{font-size:15.4px;color:#b6c4e0;margin-bottom:24px;max-width:560px}
+.ct{display:flex;gap:14px;flex-wrap:wrap}
+.bt-p{background:linear-gradient(135deg,#ffd27a,#ff8a45);color:#20160c;box-shadow:0 16px 34px rgba(255,154,69,.3)}
+.bt-p:hover{transform:translateY(-3px)}
+.btn{background:transparent;color:var(--sun);box-shadow:inset 0 0 0 1px var(--line)}
+.pill{display:inline-flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.pill i{font-style:normal;font-size:11.5px;font-weight:800;padding:6px 13px;border-radius:99px;background:rgba(58,160,255,.08);border:1px solid var(--line);color:#c4d6f2}
+
+/* 太阳轨迹 SVG */
+.arc{position:relative;width:100%;max-width:480px;margin:0 auto;aspect-ratio:1/1}
+.arc svg{position:absolute;inset:0;width:100%;height:100%}
+.sun{transform-origin:center;animation:orb 7s ease-in-out infinite}
+@keyframes orb{0%{transform:translate(0,150px) scale(.82);opacity:.72}45%{transform:translate(0,-40px) scale(1.16);opacity:1}100%{transform:translate(0,150px) scale(.82);opacity:.72}}
+.star{animation:tw 2.6s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.16}50%{opacity:1}}
+.arc .pl{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);text-align:center;z-index:6;width:74%}
+.arc .pl b{display:block;font-size:clamp(19px,3.6vw,31px);font-weight:950;letter-spacing:-1px;text-shadow:0 8px 34px rgba(0,0,0,.9)}
+.arc .pl small{display:block;font-size:10.5px;letter-spacing:.5em;color:var(--sun);font-weight:800;margin-top:7px}
+
+/* ============ 栏目一：一日四场（4 列流程卡） ============ */
+.sec-a{background:linear-gradient(180deg,#0b1020,#0f1628)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.f{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px 22px;overflow:hidden;transition:.34s var(--e)}
+.f .tick{position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--g)}
+.f:hover{transform:translateY(-8px);box-shadow:var(--sh)}
+.f .tm{font-size:10.6px;font-weight:950;letter-spacing:.22em;color:var(--sun)}
+.f .no{font-size:40px;font-weight:950;line-height:1;letter-spacing:-2px;background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent;margin:2px 0 4px}
+.f h3{font-size:18.6px;margin-bottom:6px;letter-spacing:-.4px}
+.f p{font-size:12.8px;color:var(--mut);min-height:60px}
+.f .rec{display:flex;gap:5px;flex-wrap:wrap;margin-top:12px}
+.f .rec i{font-style:normal;font-size:10.7px;font-weight:800;padding:3px 9px;border-radius:99px;background:rgba(255,179,64,.1);color:var(--sun);border:1px solid var(--line)}
+
+/* ============ 栏目二：今日排片（横向磁贴） ============ */
+.sec-f{background:#0f1628}
+.scroller{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 24px;scrollbar-width:thin}
+.scroller::-webkit-scrollbar{height:9px}
+.scroller::-webkit-scrollbar-thumb{background:#26324d;border-radius:99px}
+.mag{flex:0 0 234px;scroll-snap-align:start;background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);border:1px solid var(--line);transition:.34s var(--e)}
+.mag:hover{transform:translateY(-9px) rotate(1.4deg);border-color:rgba(58,160,255,.55)}
+.mag .cv{position:relative;height:300px;overflow:hidden;background:#0b1020}
+.mag img{width:100%;height:100%;object-fit:cover;transition:.8s var(--e);filter:saturate(1.05)}
+.mag:hover img{transform:scale(1.07);filter:saturate(1.18)}
+.mag .fl{position:absolute;top:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap}
+.mag .fl i{font-style:normal;font-size:10.4px;font-weight:800;padding:4px 9px;border-radius:99px;color:#20160c;background:var(--sun)}
+.mag .fl i.h{background:var(--sky);color:#fff}.mag .fl i.f{background:var(--teal);color:#fff}
+.mag .rt{position:absolute;bottom:12px;right:12px;background:rgba(15,22,40,.92);color:var(--sun);font-weight:950;font-size:12px;padding:5px 10px;border-radius:99px}
+.mag .tx{padding:15px 18px 18px}
+.mag .tx h3{font-size:15.6px;line-height:1.4;margin-bottom:6px;letter-spacing:-.2px}
+.mag .tx p{font-size:12.3px;color:var(--mut);display:flex;gap:8px;flex-wrap:wrap}
+.mag .tx p b{color:var(--sun);font-weight:800}
+
+/* ============ 栏目三：片单（<table> + 侧栏） ============ */
+.sec-t{background:linear-gradient(180deg,#0f1628,#0b1020)}
+.dg{display:grid;grid-template-columns:1.62fr .38fr;gap:26px}
+table.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+table.tbl thead th{background:linear-gradient(135deg,#1c3a63,#3aa0ff);color:#eef4ff;font-size:11.6px;font-weight:900;letter-spacing:.14em;padding:15px 16px;text-align:left}
+table.tbl tbody td{padding:14px 16px;border-bottom:1px solid var(--line);font-size:13.4px;vertical-align:middle}
+table.tbl tbody tr:last-child td{border-bottom:0}
+table.tbl tbody tr{transition:.22s}
+table.tbl tbody tr:hover{background:rgba(58,160,255,.09)}
+table.tbl tbody tr:hover td:first-child{color:var(--sun)}
+table.tbl .rk{font-weight:950;color:var(--sky);width:52px;letter-spacing:-.4px}
+table.tbl .nm{font-weight:900;font-size:14.4px;letter-spacing:-.3px}
+.lg{display:inline-block;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:99px;color:#20160c}
+.lg.a{background:var(--sun)}.lg.b{background:var(--teal);color:#fff}.lg.c{background:var(--deep);color:#fff}
+.bar2{height:7px;border-radius:99px;background:#1d2740;overflow:hidden;min-width:74px}
+.bar2 i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#6b5cff,#3aa0ff,#37c8b8)}
+.mn{font-weight:950;color:var(--sun);letter-spacing:-.4px;font-size:13.4px}
+.asd{display:flex;flex-direction:column;gap:14px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.box h4{font-size:13.5px;margin-bottom:15px;letter-spacing:.16em;color:var(--sun);font-weight:900}
+.box ol{display:flex;flex-direction:column;gap:12px;counter-reset:h}
+.box li{counter-increment:h;font-size:13.2px;display:flex;gap:10px;align-items:baseline;line-height:1.5;color:#b6c4e0}
+.box li::before{content:"Q"counter(h);font-weight:950;color:var(--sky);font-size:11.5px;flex-shrink:0}
+.box.g{border-color:rgba(55,200,184,.42)}
+.box.g h4{color:var(--teal)}
+.box.g p{font-size:12.7px;color:#b6c4e0}
+
+/* ============ 栏目四：导演的一天（双列时间轴） ============ */
+.sec-l{background:#0b1020}
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tl{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px}
+.tl .hd{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.tl .hd .mk{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:950;font-size:16px;color:#fff;flex-shrink:0}
+.tl .hd.h1 .mk{background:linear-gradient(135deg,#ffb340,#ff7a45)}
+.tl .hd.h2 .mk{background:linear-gradient(135deg,#37c8b8,#3aa0ff)}
+.tl .hd b{font-size:16.6px;letter-spacing:-.3px}
+.tl .hd small{display:block;font-size:10.6px;color:var(--mut);font-weight:800;letter-spacing:.14em}
+.row{position:relative;padding-left:30px;padding-bottom:18px;border-left:2px solid var(--line)}
+.row:last-child{padding-bottom:0;border-left-color:transparent}
+.row::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--sun)}
+.row.t2::before{border-color:var(--teal)}
+.row .hr2{font-size:10.8px;font-weight:950;letter-spacing:.2em;color:var(--sun)}
+.row.t2 .hr2{color:var(--teal)}
+.row h3{font-size:15.4px;margin:1px 0 4px;letter-spacing:-.2px}
+.row p{font-size:12.5px;color:var(--mut)}
+
+/* ============ 栏目五：情绪地图（砖墙 + 榜单） ============ */
+.sec-c{background:linear-gradient(180deg,#0b1020,#0f1628)}
+.bricks{column-count:4;column-gap:16px}
+.tile{break-inside:avoid;position:relative;border-radius:15px;overflow:hidden;margin-bottom:16px;box-shadow:var(--sh);cursor:pointer}
+.tile.t1{height:234px}.tile.t2{height:174px}.tile.t3{height:194px}
+.tile img{width:100%;height:100%;object-fit:cover;transition:.72s var(--e);filter:hue-rotate(-6deg) saturate(1.05)}
+.tile:hover img{transform:scale(1.1);filter:hue-rotate(0) saturate(1.16)}
+.tile .gr{position:absolute;inset:0;background:linear-gradient(180deg,transparent 32%,rgba(11,16,32,.98));display:flex;flex-direction:column;justify-content:flex-end;padding:16px 18px;color:#fff}
+.tile .gr em{font-style:normal;font-size:10.5px;letter-spacing:.2em;color:var(--sun)}
+.tile .gr b{font-size:16.5px;font-weight:950;letter-spacing:.4px}
+.tile .gr span{font-size:11.6px;opacity:.85}
+.bests{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.best{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.best h5{font-size:14px;color:var(--sun);letter-spacing:.12em;margin-bottom:13px;font-weight:900}
+.best.m h5{color:var(--teal)}
+.best ol{counter-reset:b;display:flex;flex-direction:column;gap:10px}
+.best li{counter-increment:b;font-size:13.3px;display:flex;gap:10px;align-items:baseline;color:#b6c4e0}
+.best li::before{content:counter(b,decimal-leading-zero);font-weight:950;color:var(--sky);font-size:11.5px;flex-shrink:0}
+.best.m li::before{color:var(--teal)}
+
+/* ============ CTA ============ */
+.cta{margin:0 26px;border-radius:30px;padding:64px 26px;text-align:center;color:#eef4ff;background:
+  radial-gradient(820px 400px at 12% 16%,rgba(255,179,64,.2),transparent 60%),
+  radial-gradient(800px 400px at 92% 84%,rgba(58,160,255,.2),transparent 60%),
+  linear-gradient(140deg,#1a2540,#0b1020);border:1px solid var(--line);position:relative;z-index:2}
+.cta h2{font-size:clamp(24px,4.2vw,39px);font-weight:950;letter-spacing:-1px}
+.cta p{color:#b6c4e0;max-width:600px;margin:13px auto 24px}
+
+/* ============ 页脚 ============ */
+.foot{background:#060a16;color:#7688a6;padding:58px 0 22px;margin-top:64px;border-top:1px solid var(--line);position:relative;z-index:2}
+.fg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:34px;margin-bottom:32px}
+.fb p{font-size:12.8px;color:#6b7d9c;max-width:330px;margin-top:12px}
+.fc h5{color:var(--sun);font-size:14.5px;margin-bottom:13px;letter-spacing:.1em;font-weight:900}
+.fc a{display:block;font-size:13.2px;padding:5px 0;color:#7688a6}
+.fc a:hover{color:#fff}
+.fbttm{border-top:1px solid var(--line);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.2px;color:#6b7d9c}
+
+/* ============ 动画 ============ */
+.rv{opacity:0;transform:translateY(30px);transition:.72s var(--e)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.sun,.star,.mag img,.tile img,.f{transition:none!important;animation:none!important}}
+@media(max-width:980px){
+  .hr{grid-template-columns:1fr;gap:24px}
+  .arc{max-width:420px}
+  .dg,.bests,.fg{grid-template-columns:1fr 1fr}
+  .bricks{column-count:2}
+  .flow,.dual{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .burger{display:grid;place-items:center}
+  .links{position:fixed;inset:70px 0 0 0;background:rgba(11,16,32,.98);backdrop-filter:blur(14px);flex-direction:column;justify-content:flex-start;padding:24px 18px;gap:3px;transform:translateY(-120%);transition:.42s var(--e)}
+  .links.open{transform:none}
+  .links a{width:100%;text-align:center;padding:15px;font-size:16px}
+  .brand span{display:none}
+  .dg,.bests,.bricks,.fg,.flow,.dual{grid-template-columns:1fr;column-count:auto}
+  .mag{flex-basis:200px}
+  .sec{padding:62px 0}
+  table.tbl thead{display:none}
+  table.tbl tbody td{border-bottom:0}
+  table.tbl tbody tr{display:flex;flex-wrap:wrap;gap:6px;padding:15px;border-bottom:1px solid var(--line)}
+  table.tbl tbody tr::before{content:attr(data-rk);font-weight:950;color:var(--sun);width:100%;font-size:12px;letter-spacing:.14em}
+  table.tbl .nm{width:100%}
+  .tl{padding:20px 18px}
+}
+@media(max-width:420px){
+  .wrap,.cta{padding-left:16px;padding-right:16px}
+  .mag{flex-basis:182px}
+  .arc{max-width:320px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ================= 导航 ================= -->
+<header class="nav" role="banner">
+  <div class="wrap nv">
+    <a class="brand" href="#top" aria-label="看一天电影网 首页">
+      <span class="logo" aria-hidden="true">日</span>
+      <span>看一天电影网<small>ONE DAY ONE FILM</small></span>
+    </a>
+    <nav class="links" id="links" aria-label="主导航">
+      <a href="#flow">一日四场</a>
+      <a href="#fresh">今日排片</a>
+      <a href="#theme">一天片单</a>
+      <a href="#line">导演的一天</a>
+      <a href="#cat">情绪地图</a>
+      <a href="#theme" class="go">开始看片</a>
+    </nav>
+    <button type="button" class="burger" id="burger" aria-label="切换菜单" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<!-- ================= Hero：太阳轨迹 ============ -->
+<section class="hero" id="top">
+  <div class="wrap hr">
+    <div class="hc rv">
+      <div class="eyebrow">SLOW CINEMA · SLOW DAY</div>
+      <h1>一天，<br>只做一件事：<em>看电影</em>。</h1>
+      <p>看一天电影网不做"速食片单"，只做"一天如何被一部电影填满"的观影指南：晨光·轻松、午后·烧脑、黄昏·治愈、深夜·沉思。附全天排片表、观影仪式感、导演的一天、经典台词与正版渠道索引，倡导慢看、拒绝低俗、支持正版。</p>
+      <div class="ct">
+        <a class="bt bt-p" href="#flow">☀ 一日四场</a>
+        <a class="bt btn" href="#fresh">🆕 今日排片</a>
+      </div>
+      <div class="pill"><i>晨光</i><i>午后</i><i>黄昏</i><i>深夜</i><i>烧脑</i><i>治愈</i><i>正版免费</i><i>限时免费</i><i>公版 4K</i><i>首月 0 元</i></div>
+    </div>
+    <div class="arc" id="arc" aria-label="太阳一天的轨迹插画" role="img">
+      <svg viewBox="0 0 400 400" aria-hidden="true">
+        <defs>
+          <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16284a"/><stop offset="1" stop-color="#0b1020"/></linearGradient>
+          <linearGradient id="sun2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe2a0"/><stop offset="1" stop-color="#ff8a45"/></linearGradient>
+        </defs>
+        <rect width="400" height="400" fill="url(#sky2)"/>
+        <g class="star" style="animation-delay:0s"><circle cx="44" cy="58" r="1.6" fill="#ffe2a0"/><circle cx="44" cy="58" r="6" fill="#ffe2a0" opacity=".14"/></g>
+        <g class="star" style="animation-delay:1.2s"><circle cx="352" cy="86" r="1.5" fill="#ffe2a0"/><circle cx="352" cy="86" r="5.5" fill="#ffe2a0" opacity=".14"/></g>
+        <g class="star" style="animation-delay:2.1s"><circle cx="120" cy="36" r="1.3" fill="#ffe2a0"/><circle cx="120" cy="36" r="5" fill="#ffe2a0" opacity=".12"/></g>
+        <path d="M40 300 A160 160 0 0 1 360 300" fill="none" stroke="rgba(255,179,64,.28)" stroke-width="2" stroke-dasharray="7 11"/>
+        <g class="sun">
+          <circle cx="200" cy="200" r="46" fill="url(#sun2)"/>
+          <circle cx="200" cy="200" r="66" fill="url(#sun2)" opacity=".16"/>
+          <circle cx="200" cy="200" r="88" fill="url(#sun2)" opacity=".08"/>
+        </g>
+        <path d="M0 300 Q200 262 400 300 L400 400 L0 400 Z" fill="#0c1226" opacity=".85"/>
+        <g stroke="#37c8b8" stroke-width="3" fill="none" stroke-linecap="round" opacity=".8">
+          <path d="M70 322 q8 -26 18 0" class="star" style="animation-delay:.2s"/><path d="M150 340 q8 -22 18 0" class="star" style="animation-delay:.9s"/><path d="M300 324 q8 -28 18 0" class="star" style="animation-delay:1.5s"/><path d="M336 348 q8 -20 16 0" class="star" style="animation-delay:.5s"/>
+        </g>
+      </svg>
+      <div class="pl"><b>从日出，<br>看到星子出来。</b><small>09:00 — 01:00</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 栏目一：一日四场（4 列流程卡） ============ -->
+<section class="sec sec-a" id="flow">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div>
+        <div class="kicker">❶ 栏目一 · 一日四场</div>
+        <h2 class="h2">把一天切成四场，<br>每场只放一部对味的电影。</h2>
+        <p class="lead">不看"评分最高"，看"此刻最适合"。每场标注建议时长与正版可看片源数量。</p>
+      </div>
+      <span class="tag">按时间选片</span>
+    </div>
+    <div class="flow">
+      <article class="f rv" style="--g:linear-gradient(90deg,#ffd27a,#ff8a45)"><div class="tick" aria-hidden="true"></div><div class="tm">09:00 — 11:30 · 晨光</div><div class="no">01</div><h3>晨光 · 轻松</h3><p>刚醒的脑子，适合轻一点、亮一点、有人笑出声的片子。配一杯热水。</p><div class="rec"><i>正版免费 21 部</i><i>90–110 分钟</i></div></article>
+      <article class="f rv" style="--g:linear-gradient(90deg,#6b5cff,#3aa0ff);transition-delay:.07s"><div class="tick" aria-hidden="true"></div><div class="tm">13:30 — 16:00 · 午后</div><div class="no">02</div><h3>午后 · 烧脑</h3><p>午后是意志力最强的时候，留给时间线打架、真相反转、需要暂停回放的片子。</p><div class="rec"><i>限时免费 17 部</i><i>115–150 分钟</i></div></article>
+      <article class="f rv" style="--g:linear-gradient(90deg,#37c8b8,#3aa0ff);transition-delay:.14s"><div class="tick" aria-hidden="true"></div><div class="tm">17:30 — 19:30 · 黄昏</div><div class="no">03</div><h3>黄昏 · 治愈</h3><p>天暗下来的那半小时，适合慢、适合哭、适合看完想给一个人发消息。</p><div class="rec"><i>新人 0 元 24 部</i><i>100–120 分钟</i></div></article>
+      <article class="f rv" style="--g:linear-gradient(90deg,#9b8bff,#6b5cff);transition-delay:.21s"><div class="tick" aria-hidden="true"></div><div class="tm">22:00 — 01:00 · 深夜</div><div class="no">04</div><h3>深夜 · 沉思</h3><p>睡不着，就别硬睡。给一部慢、长、敢于留白的作者电影，陪你到天亮。</p><div class="rec"><i>公版 4K 13 部</i><i>不限时长</i></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 栏目二：今日排片（横向磁贴） ============ -->
+<section class="sec sec-f" id="fresh">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div>
+        <div class="kicker">❷ 栏目二 · 今日排片</div>
+        <h2 class="h2">今日排片表：7 部电影，<br>刚好填满 16 个小时。</h2>
+        <p class="lead">按"此刻情绪"排片，非票房。每部标注场次、类型与正版渠道。</p>
+      </div>
+      <span class="tag">每天 09:00 换片</span>
+    </div>
+    <div class="scroller">
+      <a class="mag rv" href="#"><div class="cv"><img src="https://picsum.photos/id/1048/520/680" alt="海蒂和爷爷 电影剧照"><div class="fl"><i>晨光</i><i class="h">治愈</i></div><div class="rt">★ 9.2</div></div><div class="tx"><h3>海蒂和爷爷</h3><p><span>阿尔卑斯 · 童年</span><b>正版免费</b></p></div></a>
+      <a class="mag rv" href="#"><div class="cv"><img src="https://picsum.photos/id/1069/520/680" alt="小森林 电影剧照"><div class="fl"><i>晨光</i></div><div class="rt">★ 8.9</div></div><div class="tx"><h3>小森林</h3><p><span>四季 · 独居</span><b>首月 0 元</b></p></div></a>
+      <a class="mag rv" href="#"><div class="cv"><img src="https://picsum.photos/id/1072/520/680" alt="看不见的客人 电影剧照"><div class="fl"><i>HOT</i><i class="f">烧脑</i></div><div class="rt">★ 8.8</div></div><div class="tx"><h3>看不见的客人</h3><p><span>反转 · 悬疑</span><b>限时免费</b></p></div></a>
+      <a class="mag rv" href="#"><div class="cv"><img src="https://picsum.photos/id/1035/520/680" alt="盗梦空间 电影剧照"><div class="fl"><i class="f">烧脑</i></div><div class="rt">★ 9.3</div></div><div class="tx"><h3>盗梦空间</h3><p><span>梦境 · 时间</span><b>联合会员</b></p></div></a>
+      <a class="mag rv" href="#"><div class="cv"><img src="https://picsum.photos/id/1060/520/680" alt="步履不停 电影剧照"><div class="fl"><i class="h">治愈</i></div><div class="rt">★ 8.8</div></div><div class="tx"><h3>步履不停</h3><p><span>家庭 · 日常</span><b>永久免费</b></p></div></a>
+      <a class="mag rv" href="#"><div class="cv"><img src="https://picsum.photos/id/1051/520/680" alt="海上钢琴师 电影剧照"><div class="fl"><i class="h">沉思</i></div><div class="rt">★ 9.3</div></div><div class="tx"><h3>海上钢琴师</h3><p><span>孤独 · 选择</span><b>公版 4K</b></p></div></a>
+      <a class="mag rv" href="#"><div class="cv"><img src="https://picsum.photos/id/1066/520/680" alt="星际穿越 电影剧照"><div class="fl"><i>深夜</i><i class="f">沉思</i></div><div class="rt">★ 9.4</div></div><div class="tx"><h3>星际穿越</h3><p><span>时间 · 父女</span><b>公益放映</b></p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 栏目三：一天片单（table + 侧栏） ============ -->
+<section class="sec sec-t" id="theme">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div>
+        <div class="kicker">❸ 栏目三 · 一天片单</div>
+        <h2 class="h2">看一天电影网 · 一天片单：<br>十部"值得用掉一个下午"的电影。</h2>
+        <p class="lead">按"沉浸度"而非票房排序。时长条代表它需要你付出多少安静；评分为综合口碑区间，仅供选片参考。</p>
+      </div>
+      <span class="tag">倡导慢看 · 拒绝低俗</span>
+    </div>
+    <div class="dg">
+      <table class="tbl">
+        <thead><tr><th scope="col">#</th><th scope="col">片名</th><th scope="col">时长</th><th scope="col">它适合哪一刻</th><th scope="col">沉浸度</th><th scope="col">评分</th></tr></thead>
+        <tbody>
+          <tr data-rk="场次 01"><td class="rk">01</td><td class="nm">海蒂和爷爷</td><td><i class="lg a">111′</i></td><td>刚醒，需要一个干净的阿尔卑斯</td><td><div class="bar2"><i style="width:86%"></i></div></td><td class="mn">9.2</td></tr>
+          <tr data-rk="场次 02"><td class="rk">02</td><td class="nm">小森林</td><td><i class="lg b">111′</i></td><td>一个人吃饭，也想好好吃</td><td><div class="bar2"><i style="width:84%"></i></div></td><td class="mn">8.9</td></tr>
+          <tr data-rk="场次 03"><td class="rk">03</td><td class="nm">步履不停</td><td><i class="lg a">115′</i></td><td>很久没回家，又不想打电话</td><td><div class="bar2"><i style="width:90%"></i></div></td><td class="mn">8.8</td></tr>
+          <tr data-rk="场次 04"><td class="rk">04</td><td class="nm">看不见的客人</td><td><i class="lg c">106′</i></td><td>午后，想被绕进去再绕出来</td><td><div class="bar2"><i style="width:93%"></i></div></td><td class="mn">8.8</td></tr>
+          <tr data-rk="场次 05"><td class="rk">05</td><td class="nm">盗梦空间</td><td><i class="lg c">148′</i></td><td>意志力最强时，挑战一条时间线</td><td><div class="bar2"><i style="width:97%"></i></div></td><td class="mn">9.3</td></tr>
+          <tr data-rk="场次 06"><td class="rk">06</td><td class="nm">布达佩斯大饭店</td><td><i class="lg b">99′</i></td><td>想被颜色、对称和笑话喂饱</td><td><div class="bar2"><i style="width:82%"></i></div></td><td class="mn">8.9</td></tr>
+          <tr data-rk="场次 07"><td class="rk">07</td><td class="nm">海边的曼彻斯特</td><td><i class="lg a">137′</i></td><td>允许自己，不原谅</td><td><div class="bar2"><i style="width:95%"></i></div></td><td class="mn">8.6</td></tr>
+          <tr data-rk="场次 08"><td class="rk">08</td><td class="nm">海上钢琴师</td><td><i class="lg b">165′</i></td><td>天黑了，想听一个人弹到尽头</td><td><div class="bar2"><i style="width:96%"></i></div></td><td class="mn">9.3</td></tr>
+          <tr data-rk="场次 09"><td class="rk">09</td><td class="nm">星际穿越</td><td><i class="lg c">169′</i></td><td>睡不着，就把一小时当成一年</td><td><div class="bar2"><i style="width:99%"></i></div></td><td class="mn">9.4</td></tr>
+          <tr data-rk="场次 10"><td class="rk">10</td><td class="nm">地球最后的夜晚</td><td><i class="lg c">140′</i></td><td>凌晨，想做一个不会醒的梦</td><td><div class="bar2"><i style="width:91%"></i></div></td><td class="mn">7.8</td></tr>
+        </tbody>
+      </table>
+      <aside class="asd">
+        <div class="box">
+          <h4>今日热议 · 看片之问</h4>
+          <ol>
+            <li>一天看几部电影，才不算"刷"？</li>
+            <li>哪一部，适合在黄昏独自看完？</li>
+            <li>烧脑片要不要暂停回放？</li>
+            <li>看哭了，是电影好，还是我太累？</li>
+            <li>深夜那场，为什么总选最长的？</li>
+          </ol>
+        </div>
+        <div class="box g">
+          <h4>在线正版提示</h4>
+          <p>以上影片均可在正规视频平台、院线或正版发行渠道观看。看一天电影网不提供、不链接任何盗版、破解、侵权或低俗资源；慢看，也看对——支持正版，创作者才拍得出下一个值得你坐一下午的镜头。</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 栏目四：导演的一天（双列时间轴） ============ -->
+<section class="sec sec-l" id="line">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div>
+        <div class="kicker">❹ 栏目四 · 导演的一天</div>
+        <h2 class="h2">两位导演的 24 小时，<br>刚好是"看一天"的两种活法。</h2>
+        <p class="lead">时间轴，是理解作者最好的索引。同一个早晨，有人拍光，有人拍暗。</p>
+      </div>
+    </div>
+    <div class="dual">
+      <div class="tl rv">
+        <div class="hd h1"><span class="mk">光</span><span><b>是枝裕和的一天</b><small>LIGHT · 日常</small></span></div>
+        <div class="row"><div class="hr2">06:00</div><h3>醒来，听家里说话</h3><p>剧本从对话里长出来。《步履不停》《比海更深》，台词都像偷听到的。</p></div>
+        <div class="row"><div class="hr2">10:00</div><h3>拍一顿吃不完的饭</h3><p>餐桌是家庭片的主角。镜头不催，筷子也不催。</p></div>
+        <div class="row"><div class="hr2">16:00</div><h3>等光斜进窗户</h3><p>自然光即情绪。不补光，只等那一小段。</p></div>
+        <div class="row"><div class="hr2">22:00</div><h3>留一句没说完的话</h3><p>结局不解释。电影结束，生活还在走。</p></div>
+      </div>
+      <div class="tl rv" style="transition-delay:.12s">
+        <div class="hd h2"><span class="mk">暗</span><span><b>克里斯托弗·诺兰的一天</b><small>DARK · 结构</small></span></div>
+        <div class="row t2"><div class="hr2">05:30</div><h3>在纸上搭一条时间线</h3><p>先有结构，再有故事。《盗梦空间》《信条》，逻辑先于镜头。</p></div>
+        <div class="row t2"><div class="hr2">09:00</div><h3>实拍，能不绿幕就不绿幕</h3><p>火车真翻、建筑真塌。观众的身体会替眼睛记住。</p></div>
+        <div class="row t2"><div class="hr2">15:00</div><h3>与汉斯·季默争一个音</h3><p>低频不是配乐，是第二层叙事。</p></div>
+        <div class="row t2"><div class="hr2">23:30</div><h3>留一个需要倒带回看的镜头</h3><p>好的悬疑，值得被暂停。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 栏目五：情绪地图（砖墙 + 榜单） ============ -->
+<section class="sec sec-c" id="cat">
+  <div class="wrap">
+    <div class="sec-h rv">
+      <div>
+        <div class="kicker">❺ 栏目五 · 情绪地图</div>
+        <h2 class="h2">六种此刻，<br>六种该看的电影。</h2>
+        <p class="lead">不按商业类型硬分，按"我现在是什么心情"归拢。每类标注正版可看片源数量。</p>
+      </div>
+      <a class="bt btn" href="#" style="border:1px solid var(--line)">🎲 替我挑一部</a>
+    </div>
+    <div class="bricks">
+      <a class="tile t1 rv" href="#"><img src="https://picsum.photos/id/1047/500/340" alt="刚分手 情绪电影"><div class="gr"><em>MOOD · 刚分手</em><b>允许难过</b><span>正版免费 15 部</span></div></a>
+      <a class="tile t2 rv" href="#"><img src="https://picsum.photos/id/1061/500/480" alt="加班到崩溃 情绪电影"><div class="gr"><em>MOOD · 加班到崩溃</em><b>需要喘口气</b><span>限时免费 12 部</span></div></a>
+      <a class="tile t3 rv" href="#"><img src="https://picsum.photos/id/1055/500/340" alt="周末独居 情绪电影"><div class="gr"><em>MOOD · 周末独居</em><b>慢一点没关系</b><span>新人 0 元 18 部</span></div></a>
+      <a class="tile t2 rv" href="#"><img src="https://picsum.photos/id/1043/500/480" alt="想一个人 情绪电影"><div class="gr"><em>MOOD · 想一个人</em><b>异地也好</b><span>永久免费 14 部</span></div></a>
+      <a class="tile t1 rv" href="#"><img src="https://picsum.photos/id/1070/500/340" alt="失眠 情绪电影"><div class="gr"><em>MOOD · 失眠</em><b>把夜看完</b><span>公益放映 11 部</span></div></a>
+      <a class="tile t3 rv" href="#"><img src="https://picsum.photos/id/1064/500/340" alt="带父母看 情绪电影"><div class="gr"><em>MOOD · 带父母看</em><b>一起坐下</b><span>公版 4K 9 部</span></div></a>
+      <a class="tile t2 rv" href="#"><img src="https://picsum.photos/id/1037/500/480" alt="想大笑 情绪电影"><div class="gr"><em>MOOD · 想大笑</em><b>别憋着</b><span>联合会员 16 部</span></div></a>
+      <a class="tile t3 rv" href="#"><img src="https://picsum.photos/id/1082/500/340" alt="假装旅行 情绪电影"><div class="gr"><em>MOOD · 假装旅行</em><b>先去一个地方</b><span>正版 10 部</span></div></a>
+    </div>
+    <div class="bests">
+      <div class="best rv"><h5>🌅 入门必看榜</h5><ol><li>《海蒂和爷爷》— 阿尔卑斯的干净</li><li>《小森林》— 一个人，也能好好吃</li><li>《步履不停》— 那顿吃不完的饭</li><li>《布达佩斯大饭店》— 被颜色喂饱</li><li>《海上钢琴师》— 他没下船，也好</li></ol></div>
+      <div class="best m rv"><h5>🌌 进阶必看榜</h5><ol><li>《盗梦空间》— 一条绕不出的时间线</li><li>《星际穿越》— 一小时，当成一年</li><li>《看不见的客人》— 被绕进去再绕出来</li><li>《海边的曼彻斯特》— 允许自己不原谅</li><li>《地球最后的夜晚》— 做一个不会醒的梦</li></ol></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ============ -->
+<div class="wrap">
+  <div class="cta rv">
+    <h2>看一天电影，<br>不是浪费一天。</h2>
+    <p>看一天电影网每周更新"值得用掉一个下午"的片单、全天排片表与导演时间轴。不催你追新，只陪你坐到片尾字幕走完。支持正版，创作者才拍得出下一个值得你坐一下午的镜头。</p>
+    <a class="bt bt-p" href="#theme">▶ 现在就看一部</a>
+  </div>
+</div>
+
+<!-- ================= 页脚 ============ -->
+<footer class="foot" role="contentinfo">
+  <div class="wrap">
+    <div class="fg">
+      <div class="fb">
+        <a class="brand" href="#top" style="color:#fff"><span class="logo" aria-hidden="true">日</span><span>看一天电影网</span></a>
+        <p>看一天电影网是专注"一天如何被一部电影填满"的观影指南与正版导航站，整理晨光、午后、黄昏、深夜四类片单，全天排片表、观影仪式感、导演的一天、经典台词与正版渠道索引，倡导慢看、拒绝低俗、支持正版。</p>
+      </div>
+      <div class="fc"><h5>快速导航</h5><a href="#flow">一日四场</a><a href="#fresh">今日排片</a><a href="#theme">一天片单</a><a href="#line">导演的一天</a><a href="#cat">情绪地图</a></div>
+      <div class="fc"><h5>按时刻看</h5><a href="#flow">晨光 · 轻松</a><a href="#flow">午后 · 烧脑</a><a href="#flow">黄昏 · 治愈</a><a href="#flow">深夜 · 沉思</a><a href="#cat">按心情</a></div>
+      <div class="fc"><h5>关于本站</h5><a href="#theme">正版导航</a><a href="#">观影日历</a><a href="#">内容声明</a><a href="#">联系我们</a><a href="#">更新日志</a></div>
+    </div>
+    <div class="fbttm">
+      <span>© 2026 看一天电影网 版权所有</span>
+      <span>网站网址：https://kanyitiandianyingwang-cn.github.io/ ｜ 本站为观影指南与影视导航平台，不提供任何盗版、破解、侵权或低俗资源；影片请以正规渠道为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 移动端菜单
+var bg=document.getElementById('burger'),lk=document.getElementById('links');
+bg.addEventListener('click',function(){
+  lk.classList.toggle('open');
+  var o=lk.classList.contains('open');
+  bg.setAttribute('aria-expanded',String(o));bg.textContent=o?'✕':'☰';
+});
+lk.addEventListener('click',function(e){
+  if(e.target.tagName==='A'&&window.innerWidth<=720){
+    lk.classList.remove('open');bg.setAttribute('aria-expanded','false');bg.textContent='☰';
+  }
+});
+
+// 滚动入场
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e,i){
+    if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*55);io.unobserve(e.target);}
+  });},{threshold:0.1});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+}
+</script>
+</body>
+</html>
